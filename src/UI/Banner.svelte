@@ -2,10 +2,11 @@
   export let title = '';
   export let image;
   export let height;
+  export let margin = '0px' ;
 
 </script>
 
-<div class="banner" style="--image: url({image}); --height: {height}">
+<div class="banner" style="--image: url({image}); --height: {height}; --margin : {margin}">
   <div class="banner-text">
     <h1 style="font-size:50px">{title}</h1>
   </div>
@@ -22,6 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0px var(--margin);
 
   }
 

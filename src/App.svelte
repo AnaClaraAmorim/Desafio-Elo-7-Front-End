@@ -14,7 +14,7 @@ textLink = "Vagas em aberto >>"
 navigate= "#vagas"/>
 <Squad></Squad>
 <Culture></Culture>
-<Banner title='' image = '../images/foto-bottom.png' height = '50vh'></Banner>
+<Banner title='' image = '../images/foto-bottom.png' height = '50vh' margin='80px'></Banner>
 
 <style>
   :global(:root){
