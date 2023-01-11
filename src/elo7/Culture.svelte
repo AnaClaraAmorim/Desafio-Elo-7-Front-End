@@ -39,5 +39,11 @@
         display: flex;
         padding: 0px 20px;
     }
+
+    @media(max-width:800px){
+        .culture{
+            flex-direction: column;
+        }
+    }
 </style>
 

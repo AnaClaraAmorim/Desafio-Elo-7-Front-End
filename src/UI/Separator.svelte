@@ -32,7 +32,7 @@
 
   @media (max-width: 800px) {
     .separator {
-      width: 80%;
+      width: 100%;
     }
   }
 </style>
