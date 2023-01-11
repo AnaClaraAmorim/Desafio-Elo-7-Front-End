@@ -2,6 +2,7 @@
   import Banner from "./UI/Banner.svelte";
   import Information from "./UI/Information.svelte";
   import Squad from "./elo7/Squad.svelte";
+  import Culture from "./elo7/Culture.svelte";
 </script>
 
 
@@ -12,11 +13,13 @@ text = "Loren ipsun dolor sit anet, consectetur adipisci elit, sed eiusnod tenpo
 textLink = "Vagas em aberto >>"
 navigate= "#vagas"/>
 <Squad></Squad>
+<Culture></Culture>
 
 <style>
   :global(:root){
     --color-yellow: #F9B634;
-    --grey-text: rgb(100, 100, 100);
+    --grey-title: rgb(100, 100, 100);
+    --grey-text: rgb(133, 133, 133);
     --grey-background: #f0efef;
   }
 </style>

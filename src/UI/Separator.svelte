@@ -5,11 +5,16 @@
   textLink = textLink.toUpperCase();
 </script>
 
-<hr class="separator" />
-<a class="link" href={navigate}>{textLink}</a>
+<div class="separator">
+  <hr class="line" />
+  <a class="link" href={navigate}>{textLink}</a>
+</div>
 
 <style>
-  .separator {
+  .separator{
+    text-align: center;
+  }
+  .line {
     width: 15vw;
     height: 2px;
     text-align: center;
@@ -21,6 +26,8 @@
   .link {
     color: #008d8c;
     font-weight: bold;
+    text-align: center;
+    align-self: center;
   }
 
   @media (max-width: 800px) {

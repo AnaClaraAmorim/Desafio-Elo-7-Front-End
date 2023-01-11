@@ -68,7 +68,7 @@
 
   .title {
     margin-top: 0;
-    color: var(--grey-text);
+    color: var(--grey-title);
   }
 
   .name {

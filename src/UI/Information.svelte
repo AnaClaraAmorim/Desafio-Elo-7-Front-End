@@ -4,6 +4,7 @@
   export let text;
   export let textLink;
   export let navigate;
+
 </script>
 
 <div class="information">
@@ -15,7 +16,7 @@
   .information {
     padding: 20px 100px;
     text-align: center;
-    color: rgb(100, 100, 100);
+    color: var(--grey-text);
   }
 
   @media (max-width: 800px) {
