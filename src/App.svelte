@@ -4,6 +4,7 @@
   import Squad from "./elo7/Squad.svelte";
   import Culture from "./elo7/Culture.svelte";
   import Jobs from "./elo7/jobs.svelte";
+  import Footer from "./UI/Footer.svelte";
 </script>
 
 
@@ -17,10 +18,11 @@ navigate= "#vagas"/>
 <Culture></Culture>
 <Banner title='' image = '../images/foto-bottom.png' height = '50vh' margin='80px'></Banner>
 <Jobs></Jobs>
+<Footer image = '../images/logo.png' alt= "logo elo 7 com fundo amarelo e texto em branco"></Footer>
 
 <style>
   :global(:root){
-    --color-yellow: #F9B634;
+    --color-yellow: #fdb933;
     --grey-title: rgb(100, 100, 100);
     --grey-text: rgb(133, 133, 133);
     --grey-background: #f0efef;
