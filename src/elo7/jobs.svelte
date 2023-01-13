@@ -49,11 +49,14 @@
   .role{
     color: var(--blue-link);
     font-weight: bold;
+    cursor: pointer;
   }
 
   .location{
     color: var(--grey-text);
     font-weight: bold;
+    cursor: pointer;
+
   }
 
   @media (max-width: 800px) {
