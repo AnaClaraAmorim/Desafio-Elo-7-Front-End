@@ -3,6 +3,7 @@
   import Information from "./UI/Information.svelte";
   import Squad from "./elo7/Squad.svelte";
   import Culture from "./elo7/Culture.svelte";
+  import Jobs from "./elo7/jobs.svelte";
 </script>
 
 
@@ -15,6 +16,7 @@ navigate= "#vagas"/>
 <Squad></Squad>
 <Culture></Culture>
 <Banner title='' image = '../images/foto-bottom.png' height = '50vh' margin='80px'></Banner>
+<Jobs></Jobs>
 
 <style>
   :global(:root){
@@ -22,5 +24,6 @@ navigate= "#vagas"/>
     --grey-title: rgb(100, 100, 100);
     --grey-text: rgb(133, 133, 133);
     --grey-background: #f0efef;
+    --blue-link: #008d8c;
   }
 </style>

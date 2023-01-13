@@ -24,12 +24,17 @@
     justify-content: center;
     align-items: center;
     margin: 0px var(--margin);
-
   }
 
   .banner-text {
     padding-top: 30vh;
     text-align: center;
     color: white;
+  }
+
+  @media(max-width:800px){
+    .banner{
+      margin: 0px;
+    }
   }
 </style>

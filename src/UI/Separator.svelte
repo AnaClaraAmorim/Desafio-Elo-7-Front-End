@@ -24,7 +24,7 @@
   }
 
   .link {
-    color: #008d8c;
+    color: var(--blue-link);
     font-weight: bold;
     text-align: center;
     align-self: center;

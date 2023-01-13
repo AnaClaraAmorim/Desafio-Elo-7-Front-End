@@ -15,8 +15,8 @@
 
 <style>
   .imageDescription {
-    width: 33.3vw;
-    margin: 0px 80px;
+    width: 30vw;
+    margin: 0px 3vw;
     text-align: center;
   }
 
