@@ -78,6 +78,7 @@
 
   .video {
     width: 40%;
+    align-self: center;
   }
 
   .video:hover {
@@ -97,6 +98,26 @@
   .information {
     font-size: 22px;
     letter-spacing: 0.5px;
+  }
+  @media (max-width: 1300px) {
+    .information {
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+    .title{
+      font-size: 30px;
+    }
+    .name{
+      font-size: 25px;
+    }
+    .video{
+      width: 50%;
+     
+    }
+    .text{
+      width: 50%;
+
+    }
   }
 
   @media (max-width: 800px) {
