@@ -28,6 +28,11 @@
     font-weight: bold;
     text-align: center;
     align-self: center;
+    
+  }
+
+  .link:hover{
+    color: var(--blue-link-hover);
   }
 
   @media (max-width: 800px) {

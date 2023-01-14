@@ -1,29 +1,71 @@
 <script>
   import { onMount } from "svelte";
-  const endpoint = "http://www.mocky.io/v2/5d6fb6b1310000f89166087b";
-  let vagas = [];
+  let jobs = [];
+  let errorRequest = false;
 
   onMount(async function () {
-    const response = await fetch(endpoint);
-    vagas = await response.json();
-    vagas = vagas.vagas;
-    vagas = vagas.filter((vaga) => vaga.ativa === true);
+    fetchData();
   });
+
+  function fetchData (){
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch("http://www.mocky.io/v2/5d6fb6b1310000f89166087b", requestOptions)
+      .then((response) => response.json())
+      .then((result) => filterData(result))
+      .catch((error) => errorRequest = true);
+  }
+
+  function filterData(responseJson) {
+    jobs = responseJson.vagas;
+    if (jobs.lenght == 0) {
+      return;
+    }
+    jobs = jobs.filter((job) => job.ativa === true);
+
+    jobs.forEach((element) => {
+      if (element.localizacao === undefined) {
+        element.localizacaoFinal = "Remoto";
+      } else {
+        element.localizacaoFinal =
+          element.localizacao.bairro +
+          " - " +
+          element.localizacao.cidade +
+          " - " +
+          element.localizacao.pais;
+      }
+    });
+  }
 </script>
 
 <div class="jobs" id="vagas">
   <h1 class="title">VAGAS EM ABERTO</h1>
   <h2 class="group">DESENVOLVIMENTO</h2>
-  {#each vagas as vaga}
-    <div class="listJobs">
-      <p class="role">{vaga.cargo}</p>
-      {#if vaga.localizacao === undefined}
-      <p class="location">Remoto</p>
-      {:else}
-      <p class="location">{vaga.localizacao.bairro} - {vaga.localizacao.cidade} - {vaga.localizacao.pais}</p>
-      {/if}
-    </div>
-  {/each}
+  {#if errorRequest}
+    <p> Ops, estamos lidando com erros no servidor no momento!</p>
+  {:else}
+    {#if jobs.length != 0}
+      {#each jobs as job}
+        <div class="listJobs">
+          <a class="role" href="/{job.cargo}">{job.cargo}</a>
+          <a class="location" href="/{job.cargo}">{job.localizacaoFinal}</a>
+        </div>
+      {/each}
+    {:else}
+      <p>
+        Não temos vagas disponíveis no momento, mas fique de olho nas nossas redes
+        sociais!
+      </p>
+    {/if}
+  {/if}
+  
 </div>
 
 <style>
@@ -46,34 +88,49 @@
     justify-content: space-between;
   }
 
-  .role{
+  .role {
     color: var(--blue-link);
     font-weight: bold;
-    cursor: pointer;
   }
 
-  .location{
+  .role:hover {
+    color: var(--blue-link-hover);
+  }
+
+  .location:hover {
+    color: var(--grey-text-hover);
+  }
+
+  .role:hover + .location {
+    color: var(--grey-text-hover);
+    text-decoration: underline;
+  }
+
+  .listJobs:hover > .location:hover ~ .role {
+    color: var(--blue-link-hover);
+    text-decoration: underline;
+  }
+
+  .location {
     color: var(--grey-text);
     font-weight: bold;
     cursor: pointer;
-
+    margin: 10px 0;
   }
 
   @media (max-width: 800px) {
     .jobs {
-        padding: 0px;
-        text-align: center;
-
+      padding: 0px;
+      text-align: center;
     }
 
     .listJobs {
-        flex-direction: column;
-        margin: 20px 0;
+      flex-direction: column;
+      margin: 20px 0;
     }
 
-    .location{
-        margin: 0px;
+    .location {
+      margin: 0px;
     }
   }
-
 </style>

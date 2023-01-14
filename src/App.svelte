@@ -3,7 +3,7 @@
   import Information from "./UI/Information.svelte";
   import Squad from "./elo7/Squad.svelte";
   import Culture from "./elo7/Culture.svelte";
-  import Jobs from "./elo7/jobs.svelte";
+  import Jobs from "./elo7/Jobs.svelte";
   import Footer from "./UI/Footer.svelte";
 </script>
 
@@ -25,7 +25,10 @@ navigate= "#vagas"/>
     --color-yellow: #fdb933;
     --grey-title: rgb(100, 100, 100);
     --grey-text: rgb(133, 133, 133);
+    --grey-text-hover: rgb(102, 102, 102);
     --grey-background: #f0efef;
     --blue-link: #008d8c;
+    --blue-link-hover: #016b6b;
+
   }
 </style>
