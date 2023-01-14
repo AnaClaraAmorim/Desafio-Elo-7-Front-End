@@ -108,7 +108,7 @@
     text-decoration: underline;
   }
 
-  .listJobs:hover > .location:hover ~ .role {
+  .listJobs:has(.location:hover) .role{
     color: var(--blue-link-hover);
     text-decoration: underline;
   }
