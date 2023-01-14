@@ -1,13 +1,20 @@
 <script>
+  import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
   export let textLink;
   export let navigate;
+  export let scroll = true;
 
   textLink = textLink.toUpperCase();
 </script>
 
 <div class="separator">
   <hr class="line" />
-  <a class="link" href={navigate}>{textLink}</a>
+  {#if scroll == true}
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a class="link" use:scrollTo={{ ref: `${navigate}`, duration: 2000 }}>{textLink}</a>
+  {:else}
+    <a class="link" href="{navigate}">{textLink}</a>
+  {/if}
 </div>
 
 <style>

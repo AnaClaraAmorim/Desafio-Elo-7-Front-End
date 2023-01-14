@@ -1,5 +1,7 @@
 <script>
   import { onMount } from "svelte";
+  import { scrollRef } from 'svelte-scrolling'
+
   let jobs = [];
   let errorRequest = false;
 
@@ -45,7 +47,7 @@
   }
 </script>
 
-<div class="jobs" id="vagas">
+<div class="jobs" id="vagas" use:scrollRef={'vagas'}>
   <h1 class="title">VAGAS EM ABERTO</h1>
   <h2 class="group">DESENVOLVIMENTO</h2>
   {#if errorRequest}

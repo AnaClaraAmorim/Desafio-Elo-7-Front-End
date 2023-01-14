@@ -30,7 +30,7 @@
     <ImageTitleDescription {...culture}></ImageTitleDescription>
         {/each}
     </div>
-    <Separator textLink = "Saiba Mais >>" navigate = "/saibaMais" />
+    <Separator textLink = "Saiba Mais >>" navigate = "/saibaMais" scroll = false/>
 </div>
 
 
