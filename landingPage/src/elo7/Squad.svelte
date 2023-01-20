@@ -107,7 +107,7 @@
     }
 
     .text {
-      text-align: justify;
+      text-align: center;
       padding-left: 0px;
       width: 100%;
     }
