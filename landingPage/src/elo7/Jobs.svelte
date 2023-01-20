@@ -1,17 +1,38 @@
-
 <script>
-  
+  /**
+   * Componente para exibir as vagas disponíveis na empresa, faz uma requisição fetch em uma API, faz o tratamento dos dados:
+   *        Verfica se vaga está ativa
+   *        Caso a localização não esteja sendo mostrada na vaga exibi vaga como remota
+   *        Caso retorne um vetor vazio exibi mensagem de "Não há vagas disponíveis"
+   *        Caso tenha algum problema e não consiga fazer requisição na API mostra mensagem de problemas no servidor
+   *
+   * @component
+   *
+   */
   import { onMount } from "svelte";
-  import { scrollRef } from 'svelte-scrolling'
+  import { scrollRef } from "svelte-scrolling";
 
+  /**
+   * Vetor com a lista de vagas ativas
+   *
+   * @typedef jobs
+   */
   let jobs = [];
   let errorRequest = false;
 
+  /**
+   * Função chamada depois que o componente renderiza para o DOM, chama a função que faz a requisição fetch para a API
+   */
   onMount(async function () {
     fetchData();
   });
 
-  function fetchData (){
+  /**
+   * Função que faz a requisição fetch para a API
+   *  Em caso de sucesso na requisição chama a função filterData que fará o tratamento dos dados
+   *  Em caso de falha seta variável errorRequest para true
+   */
+  function fetchData() {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -23,12 +44,18 @@
 
     fetch("http://www.mocky.io/v2/5d6fb6b1310000f89166087b", requestOptions)
       .then((response) => response.json())
-      .then((result) => jobs = filterData(result))
-      .catch((error) => errorRequest = true);
+      .then((result) => (jobs = filterData(result)))
+      .catch((error) => (errorRequest = true));
   }
 </script>
 
 <script context="module">
+  /**
+   *  Função que trata os dados recebidos da API
+   *   Verifica vagas ativas e monta parâmetro localizacaoFinal
+   *    @param resposJson
+   *    @returns {jobs} vetor com a lista de vagas
+   */
   export function filterData(responseJson) {
     let jobs = responseJson.vagas;
     if (jobs.lenght == 0) {

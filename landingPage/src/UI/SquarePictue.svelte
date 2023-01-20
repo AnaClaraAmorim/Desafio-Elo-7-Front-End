@@ -1,4 +1,9 @@
 <script>
+  /**
+   * Cria um imagem
+   *    Recebe src e alt, que é caminho da imagem e a descrição dessa imagem
+   * @component
+   */
   export let src;
   export let alt;
 </script>

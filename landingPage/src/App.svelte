@@ -117,7 +117,7 @@
   navigate="vagas"
 />
 <Squad {squad} {ceo} />
-<Culture {cultures} />
+<Culture {cultures} navigate= "/saiba mais"/>
 <Banner
   title=""
   image="../images/foto-bottom.png"

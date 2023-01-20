@@ -1,26 +1,51 @@
 <script>
+  /**
+   * Cria um menu
+   *    Recebe navItens com os itens que apareceram no menu e o link que o menu deve navegar
+   *    Recebe img e alt, que é o caminho da imagem do logo e a descrição dessa imagem
+   * @component
+   * @example
+   *  const navItems = [
+   * { label: "Nosso time", href: "time" },
+   * { label: "Cultura", href: "cultura" },
+   * { label: "Vagas", href: "vagas" },
+   *  ];
+   */
+
   import { onMount } from "svelte";
   import { scrollTo, scrollTop, setGlobalOptions } from "svelte-scrolling";
 
+  /* Define a duração da animação do scroll ao clicar em um link*/
   setGlobalOptions({
     duration: 2000,
   });
 
+  /*Define se o Menu mobile deve ser exibido ou não*/
   let showMobileMenu = false;
 
   export let img = "";
   export let alt = "";
-  
+
+  /**
+   * @type {navItems}
+   */
   export let navItems = [];
 
+  /*Muda o status do menu Mobile*/
   const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);
 
+  /*Reseta o status mobile*/
   const mediaQueryHandler = (e) => {
     if (!e.matches) {
       showMobileMenu = false;
     }
   };
 
+   /**
+   * Função chamada depois que o componente renderiza para o DOM, 
+   * verifica a largura da tela para definir se deve mostrar
+   * menu mobile ou não
+   */
   onMount(() => {
     const mediaListener = window.matchMedia("(max-width: 800px)");
 

@@ -1,4 +1,16 @@
 <script>
+  
+  /**
+   * Cria um separator com um texto, dependendo se a variável scroll é true ou não
+   * define se ao clicar no link deve realizar um scroll dentro da própria página
+   * ou navegar para outra página. Recebe as seguinte variáveis:
+   *      textLink, texto que aparecerá escrito 
+   *      navigate, para qual lugar deseja navegar
+   *      scroll, se true é porque navigate possui uma referência dentro da página, se false deve navegar para um link externo
+   *    
+   * @component
+   */
+
   import { scrollTo } from "svelte-scrolling";
   export let textLink;
   export let navigate;

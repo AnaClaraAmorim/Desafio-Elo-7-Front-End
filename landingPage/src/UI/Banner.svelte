@@ -1,4 +1,13 @@
 <script>
+  /**
+   * Componente para criar um banner, é possível definir algumas variáveis:
+   *        title, texto centralizado no meio do banner, caso não passe essa props nenhum texto será exibido
+   *        image, caminnho da imagem do banner
+   *        height, altura que o banner ocupará na tela
+   *        margin, margin lateral do banner, caso não passe nenhum valor a margin será 0
+   * @component
+   *
+   */
   export let title = "";
   export let image;
   export let height;

@@ -1,4 +1,11 @@
 <script>
+   /**
+   * Componente para criar um footer
+   *       image, logo que aparecerá a esquerda do footer
+   *       alt, descrição do logo
+   * @component
+   *
+   */
   export let image;
   export let alt;
   let year = new Date().getFullYear();

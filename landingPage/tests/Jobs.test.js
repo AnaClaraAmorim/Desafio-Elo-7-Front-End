@@ -1,7 +1,16 @@
+/*
+    Realiza os testes da função filterData que é responsável por filtrar os dados recebidos, 
+    gerando a localização final que pode ser uma junção de Bairro - Cidade - País ou Remoto e
+    só mostrando vagas que tem o status ativo
+*/
 import { filterData } from "../src/elo7/Jobs.svelte";
 
+/*
+Testa se os campos estão sendo preenchidos corretamente quando possui localização definida
+ e se somente retornou vagas com status ativo
+*/
 test("FilterData_ActiveAndWithLocation_OneFilteredJob", () => {
-    let data = buildData(1,1,1);
+    let data = buildData(2,1,1);
     let filteredData = filterData(data);
     expect(filteredData[0]["cargo"]).toBe("Desenvolvedor 0");
     expect(filteredData[0]["ativa"]).toBe(true);
@@ -11,8 +20,12 @@ test("FilterData_ActiveAndWithLocation_OneFilteredJob", () => {
     expect(filteredData.length).toBe(1);
 });
 
+/*
+Testa se os campos estão sendo preenchidos corretamente quando possui localização "undefined"
+ e se somente retornou vagas com status ativo
+*/
 test("FilterData_ActiveAndWithoutLocation_OneFilteredJob", () => {
-    let data = buildData(1,1,0);
+    let data = buildData(2,1,0);
     let filteredData = filterData(data);
     expect(filteredData[0]["cargo"]).toBe("Desenvolvedor 0");
     expect(filteredData[0]["ativa"]).toBe(true);
@@ -22,24 +35,40 @@ test("FilterData_ActiveAndWithoutLocation_OneFilteredJob", () => {
     expect(filteredData.length).toBe(1);
 });
 
+/*
+Testa se somente retorna vagas com status ativo quando possui apenas 1 vaga com status ativo = false
+*/
 test("FilterData_Inactive_ZeroFilteredJobs", () => {
     let data = buildData(1,0,1);
     let filteredData = filterData(data);
     expect(filteredData.length).toBe(0);
 });
 
+/*
+Testa se não retorna nada quando possui 0 vagas
+*/
 test("FilterData_ZeroJobs_ZeroFilteredJobs", () => {
     let data = buildData(0,0,0);
     let filteredData = filterData(data);
     expect(filteredData.length).toBe(0);
 });
 
+/*
+Testa se retorna a quantidade correta de vagas com status ativo
+*/
 test("FilterData_TenJobsButOnlyFiveActives_FiveFilteredJobs", () => {
     let data = buildData(10,5,10);
     let filteredData = filterData(data);
     expect(filteredData.length).toBe(5);
 });
 
+/*
+    Gera os dados para mandar para essa função e poder testar o resultado esperado.
+    Recebe como parâmetro: 
+        numberOfJobs - Número de vagas totais
+        numberOfActiveJobs - Número de vagas ativas
+        numberOfLocationFilled - Número de vagas que tem a localização preenchida
+*/
 function buildData(numberOfJobs, numberOfActiveJobs, numberOfLocationFilled){
     if(numberOfJobs < numberOfActiveJobs || numberOfJobs < numberOfLocationFilled){
         throw new Error(

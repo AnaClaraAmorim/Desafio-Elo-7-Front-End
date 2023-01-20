@@ -1,8 +1,32 @@
 <script>
+  /**
+   * Componente para exibir texto e video do CEO da empresa, e fotos das pessoas que trabalham na empresa.
+   * Recebe um vetor de objetos squad e itera por esse vetor, com as propriedades: src e alt.
+   * Recebe um objeto ceo com as propriedades: text, name e video.
+   * @component
+   * @example
+   *const squad = [
+   *{
+   *  src: "../images/jane.png",
+   *  alt: "Imagem em preto e branco da funcionária Jane",
+   *}
+   *];
+   *
+   *const ceo = {
+   *text: ` É bom trabalhar aqui`,
+   *name: "Carlos Cuioni",
+   *video: "../caminho_video",
+   *};
+   */
   import SquarePictue from "../UI/SquarePictue.svelte";
   import { scrollRef } from "svelte-scrolling";
-
+  /**
+   * @type {squad}
+   */
   export let squad = [];
+  /**
+   * @type {ceo}
+   */
   export let ceo = [];
 </script>
 

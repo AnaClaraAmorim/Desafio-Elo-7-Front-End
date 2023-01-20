@@ -1,4 +1,13 @@
 <script>
+   /**
+   * Componente para criar uma div com uma imagem, um título e um texto, com a largura de 30vw e margem de 3vw:
+   *        image, caminnho da imagem 
+   *        altImage, descrição da imagem
+   *        title, título 
+   *        description, texto que será mostrado
+   * @component
+   *
+   */
   export let image;
   export let altImage;
   export let title;
