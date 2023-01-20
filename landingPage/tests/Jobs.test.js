@@ -7,6 +7,7 @@ test("FilterData_ActiveAndWithLocation_OneFilteredJob", () => {
     expect(filteredData[0]["ativa"]).toBe(true);
     expect(filteredData[0]["link"]).toBe("http://elo7.dev/vaga/desenvolvedor-0");
     expect(filteredData[0]["localizacao"]["bairro"]).toBe("Bairro 0");
+    expect(filteredData[0]["localizacaoFinal"]).toBe("Bairro 0 - Cidade 0 - País 0");
     expect(filteredData.length).toBe(1);
 });
 
@@ -17,6 +18,7 @@ test("FilterData_ActiveAndWithoutLocation_OneFilteredJob", () => {
     expect(filteredData[0]["ativa"]).toBe(true);
     expect(filteredData[0]["link"]).toBe("http://elo7.dev/vaga/desenvolvedor-0");
     expect(filteredData[0]["localizacao"]).toBe(undefined);
+    expect(filteredData[0]["localizacaoFinal"]).toBe("Remoto");
     expect(filteredData.length).toBe(1);
 });
 
