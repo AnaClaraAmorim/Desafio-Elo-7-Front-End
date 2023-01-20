@@ -2,42 +2,20 @@
   import SquarePictue from "../UI/SquarePictue.svelte";
   import { scrollRef } from 'svelte-scrolling'
 
-  let squad = [
-    {
-      src: "../images/camila.png",
-      alt: "Imagem em preto e branco da funcionária Camila",
-    },
-    {
-      src: "../images/guto.png",
-      alt: "Imagem em preto e branco do funcionário Guto",
-    },
-    {
-      src: "../images/david.png",
-      alt: "Imagem em preto e branco do funcionário David",
-    },
-    {
-      src: "../images/beatriz.png",
-      alt: "Imagem em preto e branco da funcionária Beatriz",
-    },
-  ];
+  export let squad = [];
+  export let ceo = [];
 </script>
 
 <div class="company" use:scrollRef={'time'}>
   <div class="ceo">
     <div class="video">
-      <img width="100%" alt="video ceo" src="../images/placeholder-video.png" />
+      <img width="100%" alt="video ceo" src={ceo.video}/>
     </div>
     <div class="text">
       <h1 class="title">PALAVRA DO CEO</h1>
-      <h2 class="name">Carlos Cuioni</h2>
+      <h2 class="name">{ceo.name}</h2>
       <p class="information">
-        Loren ipsun dolor sit anet, consectetur adipisci elit, sed eiusnod
-        tenpor incidunt ut labore et dolore nagna aliqua. Ut enin ad ninin
-        venian, quis nostrun exercitationen ullan corporis suscipit laboriosan,
-        nisi ut aliquid ex ea connodi consequatur. Quis aute iure reprehenderit
-        in voluptate velit esse cillun dolore eu fugiat nulla pariatur.
-        Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui
-        officia deserunt nollit anin id est laborun.
+       {ceo.text}
       </p>
     </div>
   </div>
