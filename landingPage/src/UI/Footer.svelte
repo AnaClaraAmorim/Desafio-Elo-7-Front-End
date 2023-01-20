@@ -10,14 +10,14 @@
     <div class="social">
       <ul class="list">
         <li class="social-item">
-            <a
-              rel="external noreferrer"
-              class="blog"
-              href="https://blog.elo7.com.br/"
-              title="Blog"
-              target="_blank">Blog</a
-            >
-          </li>
+          <a
+            rel="external noreferrer"
+            class="blog"
+            href="https://blog.elo7.com.br/"
+            title="Blog"
+            target="_blank">Blog</a
+          >
+        </li>
         <li class="social-item">
           <a
             rel="external noreferrer"
@@ -93,7 +93,6 @@
     margin-top: auto;
     margin-left: auto;
     margin-right: auto;
-    
   }
 
   .img {
@@ -164,15 +163,15 @@
 
   .social-item .blog {
     background-image: url(//images.elo7.com.br/assets/v3/desktop/svg/footer/ic-blog.svg);
-    }
+  }
 
-    .social-item .blog:hover {
+  .social-item .blog:hover {
     background-image: url(//images.elo7.com.br/assets/v3/desktop/svg/footer/ic-blog-hover.svg);
-}
+  }
 
-  @media(max-width:800px){
+  @media (max-width: 800px) {
     .footer {
-        padding: 20px 15px;
+      padding: 20px 15px;
     }
   }
 </style>

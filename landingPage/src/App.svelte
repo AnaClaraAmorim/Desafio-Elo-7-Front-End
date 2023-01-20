@@ -7,12 +7,26 @@
   import Footer from "./UI/Footer.svelte";
   import Menu from "./UI/Menu.svelte";
 
+  /**
+   * Define os itens do menu.
+   *
+   * @typedef navItems
+   * @property {string} label - Nome que ficara exposto no menu
+   * @property {string} href - Para qual componente realizará o scroll, o scrollRef deve estar definido dentro do componente
+   */
   const navItems = [
     { label: "Nosso time", href: "time" },
     { label: "Cultura", href: "cultura" },
     { label: "Vagas", href: "vagas" },
   ];
 
+  /**
+   * Define as fotos do time 
+   *
+   * @typedef squad
+   * @property {string} src - Caminho da foto
+   * @property {string} alt - Descrição da foto
+   */
   const squad = [
     {
       src: "../images/camila.png",
@@ -32,6 +46,14 @@
     },
   ];
 
+  /**
+   * Texto e vídeo do CEO
+   *
+   * @typedef ceo
+   * @property {string} text - Depoimento do CEO
+   * @property {string} name - Nome do CEO
+   * @property {string} video - Caminho do vídeo
+   */
   const ceo = {
     text: ` Loren ipsun dolor sit anet, consectetur adipisci elit, sed eiusnod
         tenpor incidunt ut labore et dolore nagna aliqua. Ut enin ad ninin
@@ -44,6 +66,15 @@
     video: "../images/placeholder-video.png",
   };
 
+  /**
+   * Cultura/vantagens da elo 7
+   *
+   * @typedef cultures
+   * @property {string} image - Caminho da imagem
+   * @property {string} altImage - Descrição da imagem
+   * @property {string} title - Título
+   * @property {string} description - Texto descrevendo essa cultura/vantagem
+   */
   const cultures = [
     {
       image: "../images/qualidade.png",

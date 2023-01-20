@@ -4,7 +4,6 @@
   export let text;
   export let textLink;
   export let navigate;
-
 </script>
 
 <div class="information">

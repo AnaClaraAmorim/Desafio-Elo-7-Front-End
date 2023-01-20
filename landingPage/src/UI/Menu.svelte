@@ -1,26 +1,28 @@
 <script>
   import { onMount } from "svelte";
-  import { scrollTo, scrollTop,setGlobalOptions } from 'svelte-scrolling'
+  import { scrollTo, scrollTop, setGlobalOptions } from "svelte-scrolling";
 
   setGlobalOptions({
-    duration: 2000
+    duration: 2000,
   });
 
   let showMobileMenu = false;
 
-  export let img = '';
-  export let alt = '';
+  export let img = "";
+  export let alt = "";
+  /**
+   * @type {navItems}
+   */
   export let navItems = [];
 
   const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);
 
   const mediaQueryHandler = (e) => {
-    
     if (!e.matches) {
       showMobileMenu = false;
     }
   };
-  
+
   onMount(() => {
     const mediaListener = window.matchMedia("(max-width: 800px)");
 
@@ -41,11 +43,7 @@
     <div>
       <!-- svelte-ignore a11y-click-events-have-key-events -->
       <a class="logo" on:click={() => scrollTop()}>
-        <img
-          class="img"
-          src={img}
-          alt={alt}
-        />
+        <img class="img" src={img} {alt} />
       </a>
     </div>
     <div>
@@ -53,9 +51,7 @@
         {#each navItems as item}
           <li>
             <!-- svelte-ignore a11y-missing-attribute -->
-            <a
-              class="link"
-              use:scrollTo={{ ref: `${item.href}}` }}
+            <a class="link" use:scrollTo={{ ref: `${item.href}}` }}
               >{item.label}</a
             >
           </li>
@@ -70,8 +66,8 @@
     background-color: white;
     height: 45px;
     border-bottom: 2px solid rgb(235, 235, 235);
-    position: fixed; 
-    width:100vw;
+    position: fixed;
+    width: 100vw;
   }
 
   .img {
@@ -122,7 +118,6 @@
   .middle-line {
     bottom: 0;
   }
-
 
   .middle-line {
     margin: auto;
@@ -188,7 +183,7 @@
     font-weight: bold;
   }
 
-  .link:hover{
+  .link:hover {
     color: var(--color-yellow-hover);
   }
 

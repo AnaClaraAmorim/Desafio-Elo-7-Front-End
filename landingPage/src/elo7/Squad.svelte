@@ -1,21 +1,21 @@
 <script>
   import SquarePictue from "../UI/SquarePictue.svelte";
-  import { scrollRef } from 'svelte-scrolling'
+  import { scrollRef } from "svelte-scrolling";
 
   export let squad = [];
   export let ceo = [];
 </script>
 
-<div class="company" use:scrollRef={'time'}>
+<div class="company" use:scrollRef={"time"}>
   <div class="ceo">
     <div class="video">
-      <img width="100%" alt="video ceo" src={ceo.video}/>
+      <img width="100%" alt="video ceo" src={ceo.video} />
     </div>
     <div class="text">
       <h1 class="title">PALAVRA DO CEO</h1>
       <h2 class="name">{ceo.name}</h2>
       <p class="information">
-       {ceo.text}
+        {ceo.text}
       </p>
     </div>
   </div>
@@ -23,7 +23,7 @@
     <h1 class="title">CONHEÇA NOSSO TIME <br /> FORA DE SÉRIE</h1>
     <div class="pictures">
       {#each squad as person}
-        <SquarePictue  src={person.src} alt={person.alt} />
+        <SquarePictue src={person.src} alt={person.alt} />
       {/each}
     </div>
   </div>
@@ -83,26 +83,23 @@
       font-size: 15px;
       letter-spacing: 0.5px;
     }
-    .title{
+    .title {
       font-size: 30px;
     }
-    .name{
+    .name {
       font-size: 25px;
     }
-    .video{
+    .video {
       width: 50%;
-     
     }
-    .text{
+    .text {
       width: 50%;
-
     }
   }
 
   @media (max-width: 800px) {
-
     .company {
-        padding: 20px 10px;
+      padding: 20px 10px;
     }
 
     .ceo {
@@ -119,9 +116,8 @@
       width: 100%;
     }
 
-    
-    .pictures{
-        flex-direction: column;
+    .pictures {
+      flex-direction: column;
     }
   }
 </style>

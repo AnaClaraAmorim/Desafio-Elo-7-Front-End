@@ -1,5 +1,5 @@
 <script>
-  import { scrollTo } from 'svelte-scrolling'
+  import { scrollTo } from "svelte-scrolling";
   export let textLink;
   export let navigate;
   export let scroll = true;
@@ -11,14 +11,16 @@
   <hr class="line" />
   {#if scroll == true}
     <!-- svelte-ignore a11y-missing-attribute -->
-    <a class="link" use:scrollTo={{ ref: `${navigate}`, duration: 2000 }}>{textLink}</a>
+    <a class="link" use:scrollTo={{ ref: `${navigate}`, duration: 2000 }}
+      >{textLink}</a
+    >
   {:else}
-    <a class="link" href="{navigate}">{textLink}</a>
+    <a class="link" href={navigate}>{textLink}</a>
   {/if}
 </div>
 
 <style>
-  .separator{
+  .separator {
     text-align: center;
   }
   .line {
@@ -35,10 +37,9 @@
     font-weight: bold;
     text-align: center;
     align-self: center;
-    
   }
 
-  .link:hover{
+  .link:hover {
     color: var(--blue-link-hover);
   }
 
