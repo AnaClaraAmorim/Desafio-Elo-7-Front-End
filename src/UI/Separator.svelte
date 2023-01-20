@@ -1,5 +1,5 @@
 <script>
-  import { scrollTo, scrollRef, scrollTop } from 'svelte-scrolling'
+  import { scrollTo } from 'svelte-scrolling'
   export let textLink;
   export let navigate;
   export let scroll = true;

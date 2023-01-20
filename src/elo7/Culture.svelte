@@ -1,6 +1,8 @@
 <script>
     import ImageTitleDescription from "../UI/ImageTitleDescription.svelte";
     import Separator from "../UI/Separator.svelte";
+    import { scrollRef } from 'svelte-scrolling'
+
     let cultures = [
         {
             image: '../images/qualidade.png',
@@ -24,7 +26,7 @@
     ]
 </script>
 
-<div style="padding: 20px 0;">
+<div style="padding: 50px 0;" use:scrollRef={'cultura'}>
     <div class="culture">
     {#each cultures as culture}
     <ImageTitleDescription {...culture}></ImageTitleDescription>

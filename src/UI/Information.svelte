@@ -14,7 +14,7 @@
 
 <style>
   .information {
-    padding: 20px 100px;
+    padding: 50px 100px;
     text-align: center;
     color: var(--grey-text);
   }

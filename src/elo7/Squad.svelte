@@ -1,5 +1,6 @@
 <script>
   import SquarePictue from "../UI/SquarePictue.svelte";
+  import { scrollRef } from 'svelte-scrolling'
 
   let squad = [
     {
@@ -21,7 +22,7 @@
   ];
 </script>
 
-<div class="company">
+<div class="company" use:scrollRef={'time'}>
   <div class="ceo">
     <div class="video">
       <img width="100%" alt="video ceo" src="../images/placeholder-video.png" />
@@ -53,7 +54,7 @@
 <style>
   .company {
     background-color: var(--grey-background);
-    padding: 20px 80px;
+    padding: 50px 80px;
   }
 
   .text {
