@@ -10,9 +10,7 @@
 
   export let img = "";
   export let alt = "";
-  /**
-   * @type {navItems}
-   */
+  
   export let navItems = [];
 
   const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);

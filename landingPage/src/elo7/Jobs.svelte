@@ -2,7 +2,7 @@
 <script>
   
   import { onMount } from "svelte";
-  import { scrollRef } from "svelte-scrolling";
+  import { scrollRef } from 'svelte-scrolling'
 
   let jobs = [];
   let errorRequest = false;
@@ -11,7 +11,7 @@
     fetchData();
   });
 
-  function fetchData() {
+  function fetchData (){
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -23,12 +23,14 @@
 
     fetch("http://www.mocky.io/v2/5d6fb6b1310000f89166087b", requestOptions)
       .then((response) => response.json())
-      .then((result) => filterData(result))
-      .catch((error) => (errorRequest = true));
+      .then((result) => jobs = filterData(result))
+      .catch((error) => errorRequest = true);
   }
+</script>
 
-  function filterData(responseJson) {
-    jobs = responseJson.vagas;
+<script context="module">
+  export function filterData(responseJson) {
+    let jobs = responseJson.vagas;
     if (jobs.lenght == 0) {
       return;
     }
@@ -46,6 +48,8 @@
           element.localizacao.pais;
       }
     });
+
+    return jobs;
   }
 </script>
 
