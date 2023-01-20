@@ -2,7 +2,8 @@
 
 Como parte do processo seletivo do Elo7, foi desenvolvida uma landing page da empresa. Essa landing page possui uma tela principal contendo um resumo sobre o Elo7, como é trabalhar lá, depoimentos e  cultura, além de conter uma listagem das vagas em aberto que são obtidas via requisição API.
 
-O site pode ser acessado através do link: bit.ly/Elo7-trabalhe-conosco
+O site pode ser acessado através do link: 
+**https://desafio-elo7.netlify.app/**
 
 ## Requisitos:
 
@@ -34,6 +35,12 @@ Para complementar o layout do site optei por implementar um footer contendo as r
 * Tratamento para vagas vazias e para erro de requisição na API: 
 Caso a requisição via API retorne um vetor vazio, o que indica que não há vagas disponíveis aparecerá para o usuário no lugar das vagas a mensagem "Não temos vagas disponíveis no momento, mas fique de olho nas nossas redes
       sociais!". E caso a requisição via API falhe por algum problema na API, o componente do site que mostraria as vagas exibirá a mensagem "Ops, estamos lidando com erros no servidor no momento!".
+
+* Realização de testes unitários: 
+Testa a saída esperada ao fazer a requisição das vagas na API. Está nas pastas tests. E para rodar os testes é necessário ter a última versão do node e rodar o comando: 
+```sh
+npm test
+```
 
 ## Decisões:
 
